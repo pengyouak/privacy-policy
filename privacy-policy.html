@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI XPath Tool 隐私政策 / Privacy Policy</title>
+<style>
+  :root { --text:#0f172a; --muted:#64748b; --border:#e2e8f0; --accent:#2563eb; }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; padding:52px 20px 80px; background:#f8fafc; color:var(--text);
+    font:15px/1.8 system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  }
+  main { max-width:760px; margin:0 auto; background:#fff; border:1px solid var(--border); border-radius:14px; padding:44px 46px; box-shadow:0 10px 30px rgba(15,23,42,.06); }
+  h1 { font-size:26px; margin:0 0 6px; letter-spacing:-.3px; }
+  .meta { color:var(--muted); font-size:13px; margin-bottom:30px; }
+  h2 { font-size:17px; margin:34px 0 10px; padding-top:18px; border-top:1px solid var(--border); }
+  h2:first-of-type { border-top:0; padding-top:0; }
+  p, li { color:#334155; }
+  ul { padding-left:22px; }
+  li { margin:6px 0; }
+  code { background:#f1f5f9; padding:1px 6px; border-radius:5px; font-size:13px; }
+  .note { background:#eff6ff; border-left:3px solid var(--accent); padding:12px 16px; border-radius:0 8px 8px 0; margin:18px 0; }
+  .en { color:var(--muted); font-size:13.5px; }
+  table { width:100%; border-collapse:collapse; font-size:14px; margin:14px 0; }
+  th, td { text-align:left; padding:9px 10px; border-bottom:1px solid var(--border); vertical-align:top; }
+  th { color:var(--muted); font-weight:600; font-size:13px; }
+  footer { max-width:760px; margin:26px auto 0; color:var(--muted); font-size:12.5px; text-align:center; }
+</style>
+</head>
+<body>
+<main>
+  <h1>AI XPath Tool 隐私政策</h1>
+  <div class="meta">适用版本：v1.2.2 及以后 · 最后更新：2026-10-28</div>
+
+  <div class="note">
+    一句话概括：本扩展不收集、不上传、不转售任何个人数据。所有设置与历史记录只保存在你自己的浏览器里；只有当你主动配置了大模型 API 并点击「AI 生成」时，当前页面的元素结构摘要才会发送到<strong>你自己填写的</strong>那个 API 地址。
+  </div>
+
+  <h2>一、我们不收集什么</h2>
+  <ul>
+    <li>不收集任何个人身份信息（姓名、邮箱、电话、账号）</li>
+    <li>不含任何统计、埋点、崩溃上报或广告 SDK</li>
+    <li>不向开发者或任何第三方服务器发送你的浏览记录、页面内容或生成结果</li>
+    <li>不读取与元素定位无关的页面数据（如输入框内容、Cookie、密码字段值）</li>
+  </ul>
+
+  <h2>二、本地存储的数据</h2>
+  <table>
+    <tr><th>数据</th><th>存放位置</th><th>用途与保留</th></tr>
+    <tr><td>大模型配置（API 地址、模型名、API Key、温度、自定义提示词）</td><td><code>chrome.storage.local</code>（本机）</td><td>仅用于发起你主动触发的生成请求；清除扩展数据或卸载即删除</td></tr>
+    <tr><td>最近 30 条生成历史（元素摘要、XPath、策略）</td><td><code>chrome.storage.local</code>（本机）</td><td>方便复用；可在面板「清空」按钮一键删除</td></tr>
+  </table>
+  <p class="en">上述数据不会离开你的设备。API Key 未做云端备份，卸载扩展后无法恢复。</p>
+
+  <h2>三、什么时候会向外部发送数据</h2>
+  <p>仅在你<strong>同时满足</strong>以下条件时，扩展才会发起网络请求：</p>
+  <ul>
+    <li>你在设置页填写了 OpenAI 兼容的 API 地址与 Key；且</li>
+    <li>你点击了「AI 生成 XPath」（或设置页的「测试连接」）</li>
+  </ul>
+  <p>请求内容为：目标元素及其祖先链、同级兄弟元素的标签/属性/文本摘要，以及页面地址（用于让模型理解上下文）。请求直接发送到你填写的端点，<strong>不经过开发者服务器</strong>。该端点的数据处理行为受其自身隐私政策约束（例如你使用的是 OpenAI、DeepSeek、通义千问等服务商，或公司内网自建服务）。</p>
+  <p>如果你不配置任何 API，扩展全程离线运行：本地规则引擎完成 XPath 生成与验证，不产生任何网络请求。</p>
+
+  <h2>四、页面访问权限如何使用</h2>
+  <ul>
+    <li>脚本仅在你主动启动拾取、验证或高亮时读取页面 DOM 结构</li>
+    <li>不使用键盘记录、不监听输入内容、不拦截页面数据请求</li>
+    <li>冻结页面功能只是在窗口捕获阶段阻断鼠标/滚轮事件，用于固定悬浮菜单，不修改页面数据</li>
+  </ul>
+
+  <h2>五、数据删除</h2>
+  <p>在扩展面板中点「清空」可删除历史记录；在设置页清空字段并保存可移除 API 配置；卸载扩展会删除全部本地数据。</p>
+
+  <h2>六、儿童隐私</h2>
+  <p>本扩展为开发者工具，不面向 13 岁以下儿童，也不收集任何年龄信息。</p>
+
+  <h2>七、政策变更</h2>
+  <p>若数据处理方式发生变化，会在本页面更新并修改上方「最后更新」日期；涉及新增数据收集时会在扩展更新说明中显著提示。</p>
+
+  <h2>八、联系方式</h2>
+  <p>隐私相关问题请联系：<strong><a href="mailto:pengyouak@163.com">pengyouak@163.com</a></strong></p>
+
+  <h2>English Summary</h2>
+  <p class="en">AI XPath Tool does not collect, transmit, or sell any personal data. Settings (including your API key) and the last 30 generation records are stored only in your browser's local storage. Network requests occur solely when you have configured your own OpenAI-compatible endpoint and explicitly click "AI Generate": the request contains the target element's DOM summary and page URL, and is sent directly to the endpoint you configured — never to the developer. Without an API configuration, the extension runs fully offline. No analytics, no ads, no remote code.</p>
+</main>
+<footer>AI XPath Tool · 本页面可自行托管（GitHub Pages / Gitee Pages / 任意静态空间），将 URL 填入 Partner Center 的「隐私政策 URL」即可。</footer>
+</body>
+</html>
